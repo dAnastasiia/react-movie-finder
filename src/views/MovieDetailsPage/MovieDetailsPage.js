@@ -14,8 +14,8 @@ class MovieDetailsPage extends Component {
     genres: [],
     vote: null,
 
-    cast: null,
-    reviews: null,
+    cast: [],
+    reviews: [],
   };
 
   async componentDidMount() {
@@ -38,10 +38,10 @@ class MovieDetailsPage extends Component {
     });
 
     const { cast } = await api.fetchMovieCast(movieId);
-    this.setState({ cast: cast });
+    this.setState({ cast: [...cast] });
 
     const reviews = await api.fetchMovieReview(movieId);
-    this.setState({ reviews: reviews });
+    this.setState({ reviews: [...reviews] });
   }
 
   handleGoBack = () => {
@@ -83,9 +83,7 @@ class MovieDetailsPage extends Component {
 
         <Route
           path={`${url}/credits`}
-          render={props => {
-            <Cast {...props} cast={cast} />;
-          }}
+          render={props => <Cast {...props} cast={cast} />}
         />
 
         <Route

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Cast extends Component {
+export default class Cast extends Component {
   static propTypes = {
     cast: PropTypes.array.isRequired,
   };
 
   render() {
     const { cast } = this.props;
+
     const shouldRenderCast = cast.length;
 
     return (
@@ -32,5 +33,3 @@ class Cast extends Component {
     );
   }
 }
-
-export default Cast;

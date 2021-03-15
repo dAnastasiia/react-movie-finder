@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Reviews extends Component {
+export default class Reviews extends Component {
   static propTypes = {
     reviews: PropTypes.array.isRequired,
   };
 
   render() {
     const { reviews } = this.props;
-    const shouldRendeReviews = reviews.length;
+    const shouldRenderReviews = reviews.length;
 
     return (
       <>
-        {shouldRendeReviews > 0 ? (
+        {shouldRenderReviews > 0 ? (
           <ul>
             {reviews.map(({ id, author, content }) => (
               <li key={id}>
@@ -28,5 +28,3 @@ class Reviews extends Component {
     );
   }
 }
-
-export default Reviews;

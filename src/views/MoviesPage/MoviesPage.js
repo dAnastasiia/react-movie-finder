@@ -28,6 +28,8 @@ class MoviesPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
+    console.dir(e.currentTarget);
+
     this.reset();
   };
 
