@@ -6,7 +6,7 @@ import routes from '../../routes';
 const MoviesList = ({ movies, location }) => {
   return (
     <>
-      <ul>
+      <ul className="movies-list">
         {movies.map(({ id, title }) => (
           <li key={id}>
             <NavLink

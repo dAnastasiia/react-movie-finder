@@ -53,33 +53,68 @@ class MovieDetailsPage extends Component {
   render() {
     const { poster, title, overview, genres, vote, cast, reviews } = this.state;
     const { url } = this.props.match;
+    const { location } = this.props;
 
     return (
       <>
-        <button type="button" onClick={this.handleGoBack}>
+        <button
+          type="button"
+          onClick={this.handleGoBack}
+          className="go-back-button"
+        >
           Go back
         </button>
 
-        <img src={`https://image.tmdb.org/t/p/w500${poster}`} alt={title} />
+        <div className="movie">
+          <img
+            src={`https://image.tmdb.org/t/p/w500${poster}`}
+            alt={title}
+            className="poster"
+          />
 
-        <h1>{title}</h1>
-        <p>User score: {vote}</p>
+          <div className="movie-info">
+            <h1 className="movie-info__title">{title}</h1>
+            <p>User score: {vote}</p>
 
-        <h3>Overview</h3>
-        <p>{overview}</p>
+            <h3 className="movie-info__title">Overview</h3>
+            <p>{overview}</p>
 
-        <h3>Genres</h3>
-        <p>{genres.map(({ name }) => name).join(' ')}</p>
+            <h3 className="movie-info__title">Genres</h3>
+            <p>{genres.map(({ name }) => name).join(' ')}</p>
+          </div>
+        </div>
 
-        <h2>Additional information</h2>
-        <ul>
-          <li>
-            <NavLink to={`${url}/credits`}>Cast</NavLink>
-          </li>
-          <li>
-            <NavLink to={`${url}/reviews`}>Reviews</NavLink>
-          </li>
-        </ul>
+        <div className="movie-add-info">
+          <h2 className="movie-info__title">Additional information</h2>
+          <ul className="movie-info-list">
+            <li>
+              <NavLink
+                to={{
+                  pathname: `${url}/credits`,
+                  state: {
+                    from: location,
+                  },
+                }}
+                className="movie-info-item"
+              >
+                Cast
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={{
+                  pathname: `${url}/rewiews`,
+                  state: {
+                    from: location,
+                  },
+                }}
+                className="movie-info-item"
+              >
+                Reviews
+              </NavLink>
+            </li>
+          </ul>
+        </div>
 
         <Route
           path={`${url}/credits`}

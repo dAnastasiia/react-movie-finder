@@ -14,20 +14,21 @@ export default class Cast extends Component {
     return (
       <>
         {shouldRenderCast > 0 ? (
-          <ul>
+          <ul className="cast">
             {cast.map(({ id, profile_path, name, character }) => (
-              <li key={id}>
+              <li key={id} className="cast-item">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${profile_path}`}
                   alt={name}
+                  width="120"
                 />
-                <p>{name}</p>
+                <p className="cast-name">{name}</p>
                 <p>Character: {character}</p>
               </li>
             ))}
           </ul>
         ) : (
-          <h3>No actors</h3>
+          <h3 className="cast">No actors</h3>
         )}
       </>
     );

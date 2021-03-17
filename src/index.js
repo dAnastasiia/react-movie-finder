@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './components/App';
 
 import 'modern-normalize/modern-normalize.css';
-import './styles.css';
+import './styles.scss';
 
 ReactDOM.render(
   <BrowserRouter>

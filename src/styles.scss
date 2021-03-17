@@ -1,0 +1,180 @@
+html {
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: black;
+
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.AppBar {
+  top: 0;
+  left: 0;
+  justify-content: center;
+  min-height: 64px;
+  padding: 20px 30px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+ul.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: inherit;
+
+  font-weight: 700;
+
+  margin-right: 20px;
+  cursor: pointer;
+
+  &.active {
+    color: purple;
+  }
+}
+
+.home-title {
+  margin: 20px 30px;
+}
+
+.SearchForm {
+  margin: 20px 30px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  display: flex;
+
+  &-button {
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  &-input {
+    display: inline-block;
+    width: 100%;
+    font: inherit;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-right: 20px;
+
+    &::placeholder {
+      font: inherit;
+      font-size: 16px;
+    }
+  }
+}
+
+.movies-list {
+  margin: 0;
+  margin-left: 30px;
+
+  > li {
+    margin-bottom: 5px;
+  }
+}
+
+.go-back-button {
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 0 10px 30px;
+}
+
+.movie,
+.movie-add-info {
+  margin: 0;
+  margin-left: 30px;
+}
+
+.poster {
+  width: 320px;
+  margin-right: 20px;
+}
+
+.movie {
+  display: flex;
+}
+
+.movie-info {
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  > p {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  &-list {
+    margin: 0;
+
+    > li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.movie-add-info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cast-item > p {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+p.cast-name,
+p.review-author {
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+p.review-author {
+  font-style: italic;
+}
+
+p.review-content {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.cast,
+.rewiews {
+  margin: 20px 30px 20px 30px;
+}
+
+.rewiews > p {
+  margin: 0;
+  max-width: 1200px;
+}

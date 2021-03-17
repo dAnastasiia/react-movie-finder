@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-// import PropTypes from 'prop-types';
 import api from '../../services/movies-api';
 
 import MoviesList from '../../components/MoviesList';
@@ -11,15 +9,6 @@ class MoviesPage extends Component {
     query: '',
   };
 
-  ///ПОЧИНИТЬ ОТРИСОВКУ - ПОСЛЕ САБМИТА
-  async componentDidUpdate(prevProps, prevState) {
-    if (prevState.query !== this.state.query) {
-      const response = await api.fetchMovies(this.state.query);
-
-      this.setState({ movies: [...response] });
-    }
-  }
-
   handleChange = e => {
     const value = e.currentTarget.value;
     this.setState({ query: value });
@@ -28,7 +17,9 @@ class MoviesPage extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    console.dir(e.currentTarget);
+    api.fetchMovies(this.state.query).then(data => {
+      this.setState({ movies: [...data] });
+    });
 
     this.reset();
   };
@@ -42,8 +33,9 @@ class MoviesPage extends Component {
 
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="SearchForm">
           <input
+            className="SearchForm-input"
             onChange={this.handleChange}
             value={query}
             type="text"
@@ -51,7 +43,9 @@ class MoviesPage extends Component {
             autoFocus
             placeholder="Search movies"
           />
-          <button type="submit">Search</button>
+          <button type="submit" className="SearchForm-button">
+            Search
+          </button>
         </form>
 
         {movies && <MoviesList movies={movies} />}

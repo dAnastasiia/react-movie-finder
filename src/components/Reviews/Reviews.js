@@ -13,16 +13,16 @@ export default class Reviews extends Component {
     return (
       <>
         {shouldRenderReviews > 0 ? (
-          <ul>
+          <ul className="rewiews">
             {reviews.map(({ id, author, content }) => (
               <li key={id}>
-                <p>Author: {author}</p>
-                <p>{content}</p>
+                <p className="review-author">Author: {author}</p>
+                <p className="review-content">{content}</p>
               </li>
             ))}
           </ul>
         ) : (
-          <h3>No reviews yet</h3>
+          <h3 className="rewiews">No reviews yet</h3>
         )}
       </>
     );

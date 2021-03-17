@@ -1,19 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import routes from '../../routes';
+import Navigation from '../Navigation';
 
 const AppBar = () => {
   return (
-    <ul>
-      <li>
-        <NavLink exact to={routes.home}>
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to={routes.movies}>Movies</NavLink>
-      </li>
-    </ul>
+    <header className="AppBar">
+      <Navigation />
+    </header>
   );
 };
 
