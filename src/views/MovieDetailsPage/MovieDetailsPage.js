@@ -53,7 +53,6 @@ class MovieDetailsPage extends Component {
   render() {
     const { poster, title, overview, genres, vote, cast, reviews } = this.state;
     const { url } = this.props.match;
-    const { location } = this.props;
 
     return (
       <>
@@ -92,7 +91,7 @@ class MovieDetailsPage extends Component {
                 to={{
                   pathname: `${url}/credits`,
                   state: {
-                    from: location,
+                    from: `${url}`,
                   },
                 }}
                 className="movie-info-item"
@@ -105,7 +104,7 @@ class MovieDetailsPage extends Component {
                 to={{
                   pathname: `${url}/rewiews`,
                   state: {
-                    from: location,
+                    from: `${url}`,
                   },
                 }}
                 className="movie-info-item"
