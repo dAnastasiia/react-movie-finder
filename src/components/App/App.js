@@ -27,7 +27,7 @@ const App = () => (
         {/* <Route exact path="/">
           <Redirect to="/home" component={HomePage} />
         </Route> */}
-        <Redirect exact from="/" to={routes.home} />
+        <Redirect from="/goit-react-hw-04-movies/" to={routes.home} />
         <Route exact path={routes.home} component={HomePage} />
         <Route path={routes.movieDetails} component={MovieDetailsPage} />
         <Route path={routes.movies} component={MoviesPage} />
