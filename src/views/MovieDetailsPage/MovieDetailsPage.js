@@ -54,6 +54,8 @@ class MovieDetailsPage extends Component {
     const { poster, title, overview, genres, vote, cast, reviews } = this.state;
     const { url } = this.props.match;
 
+    const { from } = this.props.location.state;
+
     return (
       <>
         <button
@@ -91,7 +93,7 @@ class MovieDetailsPage extends Component {
                 to={{
                   pathname: `${url}/credits`,
                   state: {
-                    from: `${url}`,
+                    from: from,
                   },
                 }}
                 className="movie-info-item"
@@ -104,7 +106,7 @@ class MovieDetailsPage extends Component {
                 to={{
                   pathname: `${url}/rewiews`,
                   state: {
-                    from: `${url}`,
+                    from: from,
                   },
                 }}
                 className="movie-info-item"

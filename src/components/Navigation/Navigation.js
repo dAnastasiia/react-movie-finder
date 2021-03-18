@@ -4,7 +4,7 @@ import routes from '../../routes';
 
 const Navigation = () => {
   return (
-    <ul class="navigation">
+    <ul className="navigation">
       <li>
         <NavLink
           exact
