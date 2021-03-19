@@ -12,6 +12,8 @@ class HomePage extends Component {
     const response = await api.fetchTrending();
 
     this.setState({ movies: [...response] });
+
+    localStorage.removeItem('query');
   }
 
   render() {

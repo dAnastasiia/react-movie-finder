@@ -24,9 +24,6 @@ const App = () => (
 
     <Suspense fallback={<h1 className="home-title">Loading...</h1>}>
       <Switch>
-        {/* <Route exact path="/">
-          <Redirect to="/home" component={HomePage} />
-        </Route> */}
         <Redirect from="/goit-react-hw-04-movies/" to={routes.home} />
         <Route exact path={routes.home} component={HomePage} />
         <Route path={routes.movieDetails} component={MovieDetailsPage} />

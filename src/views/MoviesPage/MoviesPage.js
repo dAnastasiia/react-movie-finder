@@ -9,6 +9,16 @@ class MoviesPage extends Component {
     query: '',
   };
 
+  async componentDidMount() {
+    const query = localStorage.getItem('query');
+
+    if (query) {
+      await api.fetchMovies(query).then(data => {
+        this.setState({ movies: [...data] });
+      });
+    }
+  }
+
   handleChange = e => {
     const value = e.currentTarget.value;
     this.setState({ query: value });
@@ -20,6 +30,8 @@ class MoviesPage extends Component {
     api.fetchMovies(this.state.query).then(data => {
       this.setState({ movies: [...data] });
     });
+
+    localStorage.setItem('query', this.state.query);
 
     this.reset();
   };
